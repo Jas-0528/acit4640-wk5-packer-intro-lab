@@ -50,7 +50,7 @@ Goal: Use Packer to create an AMI running Debian, with Nginx installed, serving 
       provisioner "file" {
         # COMPLETE ME add the HTML file to your image
         source      = "files/index.html"
-        # make destination temp 
+        #make destination  
         destination = "/web/html/index.html"
       }
     ```
@@ -61,7 +61,7 @@ Goal: Use Packer to create an AMI running Debian, with Nginx installed, serving 
       provisioner "file" {
         # COMPLETE ME add the HTML file to your image
         source      = "files/nginx.conf"
-        # make destination
+        #make destination
         destination = "/tmp/web/nginx.conf"
       }
     ```
@@ -97,9 +97,11 @@ Goal: Use Packer to create an AMI running Debian, with Nginx installed, serving 
     ```
     
 9. Run `packer init .` to initialize and install plugins
-10. Run `packer format` to format the pkr.hcl file
-11. Run `packer build` to build the image. 
-12. Confirm that the AMI was successfully created
+10. Run `packer fmt` to format the pkr.hcl file
+11. Run `packer validate` to ensure no errors
+12. Run `packer inspect` to doublecheck components
+13. Run `packer build` to build the image. 
+14. Confirm that the AMI was successfully created
 
 ### Webpage Image
 ![Webpage](Lab5_Webpage.png)
